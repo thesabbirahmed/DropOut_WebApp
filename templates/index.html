@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Status Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Student Status Prediction</h1>
+      <form action="/predict" method="post">
+        <label for="application_mode">Application Mode:</label>
+        <input
+          type="text"
+          id="application_mode"
+          name="application_mode"
+          required
+        /><br /><br />
+
+        <label for="displaced">Displaced:</label>
+        <input
+          type="text"
+          id="displaced"
+          name="displaced"
+          required
+        /><br /><br />
+
+        <label for="debtor">Debtor:</label>
+        <input type="text" id="debtor" name="debtor" required /><br /><br />
+
+        <label for="tuition_fees_up_to_date">Tuition Fees Up To Date:</label>
+        <input
+          type="text"
+          id="tuition_fees_up_to_date"
+          name="tuition_fees_up_to_date"
+          required
+        /><br /><br />
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required /><br /><br />
+
+        <label for="scholarship_holder">Scholarship Holder:</label>
+        <input
+          type="text"
+          id="scholarship_holder"
+          name="scholarship_holder"
+          required
+        /><br /><br />
+
+        <label for="age_at_enrollment">Age at Enrollment:</label>
+        <input
+          type="number"
+          id="age_at_enrollment"
+          name="age_at_enrollment"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_1st_sem_enrolled"
+          >Curricular Units 1st Sem (Enrolled):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_1st_sem_enrolled"
+          name="curricular_units_1st_sem_enrolled"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_1st_sem_approved"
+          >Curricular Units 1st Sem (Approved):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_1st_sem_approved"
+          name="curricular_units_1st_sem_approved"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_1st_sem_grade"
+          >Curricular Units 1st Sem (Grade):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_1st_sem_grade"
+          name="curricular_units_1st_sem_grade"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_2nd_sem_enrolled"
+          >Curricular Units 2nd Sem (Enrolled):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_2nd_sem_enrolled"
+          name="curricular_units_2nd_sem_enrolled"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_2nd_sem_approved"
+          >Curricular Units 2nd Sem (Approved):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_2nd_sem_approved"
+          name="curricular_units_2nd_sem_approved"
+          required
+        /><br /><br />
+
+        <label for="curricular_units_2nd_sem_grade"
+          >Curricular Units 2nd Sem (Grade):</label
+        >
+        <input
+          type="number"
+          id="curricular_units_2nd_sem_grade"
+          name="curricular_units_2nd_sem_grade"
+          required
+        /><br /><br />
+
+        <input type="submit" value="Predict" />
+      </form>
+      <div class="result">
+        <h2>{{ prediction_text }}</h2>
+      </div>
+    </div>
+  </body>
+</html>
